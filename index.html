@@ -11,7 +11,12 @@
 <body>
 
     <header>
-        <h1>Robô Inteligente com Arduino</h1>
+<header>
+    <h1>TEC-PI Inovação e Robótica</h1>
+    <div class="banner">
+        <img src="img\TEC PI (1).gif" alt="Logo TEC-PI" width="600" height="300">
+    </div>
+</header>
         <nav>
             <ul>
                 <li><a href="#grupo">Grupo</a></li>
@@ -24,26 +29,96 @@
 
     <!-- SOBRE O GRUPO -->
     <section id="grupo" class="grupo">
-        <h2>Sobre o Grupo</h2>
-        <p>Somos um grupo de estudantes apaixonados por tecnologia, automação e robótica.</p>
-        <p>Estes robôs foram criados como parte de um projeto interdisciplinar, unindo conhecimentos de eletrônica, programação e design.</p>
+        <h1>Sobre nosso trabalho</h1>
+        <p><h3>A robótica educacional tem se destacado como uma ferramenta essencial para o aprendizado prático de conceitos de eletrônica, programação e design. No contexto do TUMO Lisboa, um grupo de estudantes desenvolveu um projeto interdisciplinar com o objetivo de criar robôs inteligentes utilizando a plataforma Arduino, integrando diversos sensores e sistemas de controle.
+
+O projeto envolveu várias etapas, desde o planejamento e seleção de componentes até a montagem do hardware, programação e realização de testes, permitindo que os alunos aplicassem conhecimentos teóricos em situações reais. <p>Os robôs desenvolvidos incorporam sensores ultrassônicos, infravermelhos, de umidade, temperatura e luminosidade, além de funcionalidades como movimento inteligente, controle remoto e luzes LED, proporcionando uma experiência prática completa.</p>
+
+Este trabalho final reflete a aplicação de competências adquiridas ao longo do curso, evidenciando a importância da robótica como recurso pedagógico capaz de estimular criatividade, pensamento crítico e trabalho em equipe, transformando o aprendizado em uma experiência ativa e envolvente.</p>
+        <p>Estes robôs foram criados como parte de um projeto interdisciplinar, unindo conhecimentos de eletrônica, programação, modelagem 3D e design.</h3></p>
         <div class="grupo-img">
             <img src="img\intercambistas.jpg" alt="Foto do grupo desenvolvedor">
         </div>
     </section>
 
-    <!-- ETAPAS DO PROJETO -->
-    <section id="etapas" class="etapas">
-        <h2>Etapas do Projeto</h2>
-        <div id="etapa-content">
-            <!-- Conteúdo dinâmico aqui -->
-        </div>
-        <button id="proximaEtapa" class="btn">Próxima Etapa</button>
-    </section>
-    
+<!-- ETAPAS DO PROJETO -->
+<section id="etapas" class="etapas">
+    <h2>Etapas do Projeto</h2>
+    <div id="etapa-content" class="fade">
+        <!-- Conteúdo dinâmico aqui -->
+    </div>
+</section>
 
-    <!-- MODELOS -->
-    <section id="modelos" class="modelos">
+<style>
+    #etapas {
+        text-align: center;
+        padding: 50px 20px;
+        background: linear-gradient(135deg, #353536, #74777c);
+        color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        max-width: 800px;
+        margin: 40px auto;
+    }
+
+    #etapas h2 {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    #etapa-content {
+        font-size: 1.8rem;   /* fonte maior */
+        font-weight: bold;
+        min-height: 60px;
+        padding: 20px 30px;
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.3);
+        display: inline-block;
+        transition: opacity 1s ease-in-out;
+        opacity: 1;
+    }
+
+    .fade-out {
+        opacity: 0;
+    }
+</style>
+
+<script>
+    const etapas = [
+        "Etapa 1: Planejamento e definição dos objetivos.",
+        "Etapa 2: Pesquisa e levantamento de informações.",
+        "Etapa 3: Desenvolvimento do protótipo.",
+        "Etapa 4: Testes e ajustes finais.",
+        "Etapa 5: Apresentação e entrega do projeto."
+    ];
+
+    let indice = 0;
+    const conteudo = document.getElementById("etapa-content");
+
+    function mostrarEtapa() {
+        conteudo.classList.add("fade-out");
+        setTimeout(() => {
+            conteudo.innerText = etapas[indice];
+            conteudo.classList.remove("fade-out");
+            indice++;
+            if (indice >= etapas.length) indice = 0;
+        }, 1000);
+    }
+
+    // primeira etapa
+    conteudo.innerText = etapas[indice];
+    indice++;
+
+    // troca automática
+    setInterval(mostrarEtapa, 3000);
+</script>
+
+
+
+
+<!-- MODELOS -->
+<section id="modelos" class="modelos">
     <h2>Modelos Disponíveis</h2>
     <div class="cards">
         <div class="card">
@@ -55,6 +130,76 @@
         </div>
     </div>
 </section>
+
+<style>
+    /* --- MODELOS (padronizado com ETAPAS) --- */
+    #modelos {
+        text-align: center;
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #5f5e61, #676869); /* igual ETAPAS */
+        color: #fff;
+        border-radius: 15px;
+        max-width: 1100px;
+        margin: 40px auto;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    #modelos h2 {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+    }
+
+    .card {
+        background: rgba(0, 0, 0, 0.3); /* igual ao box das etapas */
+        border-radius: 15px;
+        padding: 25px;
+        width: 300px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+        transition: transform 0.3s, box-shadow 0.3s;
+        color: #fff;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .card p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        background: linear-gradient(135deg, #2e2e2e, #838385); /* estilo igual ao botão moderno */
+        border: none;
+        color: #fff;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #383738, #ecf2f3);
+    }
+</style>
+
 
     <!-- COMPONENTES -->
     <section id="componentes" class="componentes">

@@ -14,13 +14,13 @@ body {
 }
 
 header {
-    background: #1f2833;
+    background: #cfb8b8;
     padding: 20px;
     text-align: center;
 }
 
 header h1 {
-    color: #66fcf1;
+    color: #292929;
 }
 
 nav ul {
@@ -32,7 +32,7 @@ nav ul {
 }
 
 nav a {
-    color: #c5c6c7;
+    color: #2f2f30;
     text-decoration: none;
     font-weight: bold;
 }
@@ -93,7 +93,7 @@ nav a {
 }
 
 .card h3 {
-    color: #66fcf1;
+    color: #edf5f4;
 }
 
 .componentes ul {
