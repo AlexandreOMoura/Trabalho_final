@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robô Arduino - Projeto Escolar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Robô Inteligente com Arduino</h1>
+        <nav>
+            <ul>
+                <li><a href="#grupo">Grupo</a></li>
+                <li><a href="#etapas">Etapas</a></li>
+                <li><a href="#modelos">Modelos</a></li>
+                <li><a href="#componentes">Componentes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SOBRE O GRUPO -->
+    <section id="grupo" class="grupo">
+        <h2>Sobre o Grupo</h2>
+        <p>Somos um grupo de estudantes apaixonados por tecnologia, automação e robótica.</p>
+        <p>Estes robôs foram criados como parte de um projeto interdisciplinar, unindo conhecimentos de eletrônica, programação e design.</p>
+        <div class="grupo-img">
+            <img src="img\intercambistas.jpg" alt="Foto do grupo desenvolvedor">
+        </div>
+    </section>
+
+    <!-- ETAPAS DO PROJETO -->
+    <section id="etapas" class="etapas">
+        <h2>Etapas do Projeto</h2>
+        <div id="etapa-content">
+            <!-- Conteúdo dinâmico aqui -->
+        </div>
+        <button id="proximaEtapa" class="btn">Próxima Etapa</button>
+    </section>
+    
+
+    <!-- MODELOS -->
+    <section id="modelos" class="modelos">
+    <h2>Modelos Disponíveis</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Modelo Escolar</h3>
+            <p>Feito para fins educacionais e projetos acadêmicos.</p>
+            <a href="pagina-detalhes.html">
+                <button class="btn">Saiba Mais</button>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- COMPONENTES -->
+    <section id="componentes" class="componentes">
+        <h2>Componentes do Robô</h2>
+        <ul>
+            <li>✅ Sensores Ultrassônicos</li>
+            <li>✅ Sensores Infravermelhos</li>
+            <li>✅ Sensor de Umidade</li>
+            <li>✅ Medidor de Temperatura</li>
+            <li>✅ Sensor de Luminosidade</li>
+            <li>✅ Modelos controlados por controle remoto</li>
+
+
+            <li>✅ Luzes LED e Movimento Inteligente</li>
+        </ul>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria" class="galeria">
+        <h2>Galeria do Projeto</h2>
+        <div class="media">
+  <video controls autoplay muted loop width="640" height="360">
+  <source src="video/montagem.mp4" type="video/mp4">
+  Seu navegador não suporta o elemento de vídeo.
+  </video>
+            <img src="img\componentes.jpeg" alt="Componentes internos">
+<video controls autoplay muted loop width="640" height="360">
+  <source src="video\video2.mp4" type="video/mp4">
+  Seu navegador não suporta o elemento de vídeo.
+</video>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Projeto final TUMO.</p>
+    </footer>
+
+    <script>
+        const etapas = [
+            {
+                titulo: "Etapa 1 - Planejamento",
+                descricao: "Definição do projeto, objetivos e escolha dos componentes Arduino e sensores a serem usados."
+            },
+            {
+                titulo: "Etapa 2 - Montagem do Hardware",
+                descricao: "Montamos a estrutura do robô, conectando sensores ultra-sônicos, infravermelhos, e motores."
+            },
+            {
+                titulo: "Etapa 3 - Programação",
+                descricao: "Desenvolvimento do código em Arduino IDE para controlar sensores, LEDs, e movimentos."
+            },
+            {
+                titulo: "Etapa 4 - Testes",
+                descricao: "Realizamos testes em diferentes ambientes e ajustamos os sensores para melhor desempenho."
+            },
+           
+        ];
+
+        let etapaAtual = 0;
+
+        const etapaContent = document.getElementById('etapa-content');
+        const btnProxima = document.getElementById('proximaEtapa');
+
+        function mostrarEtapa(index) {
+            const etapa = etapas[index];
+            etapaContent.innerHTML = `
+                <h3>${etapa.titulo}</h3>
+                <p>${etapa.descricao}</p>
+            `;
+        }
+
+        btnProxima.addEventListener('click', () => {
+            etapaAtual = (etapaAtual + 1) % etapas.length;
+            mostrarEtapa(etapaAtual);
+        });
+
+        // Mostra a primeira etapa ao carregar
+        mostrarEtapa(etapaAtual);
+    </script>
+
+</body>
+
+</html>

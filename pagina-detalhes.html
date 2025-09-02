@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Modelo Escolar - Projeto Arduino</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Galeria visualmente atraente */
+        .galeria-fotos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .foto-card {
+            flex: 1 1 220px;
+            max-width: 260px;
+            background-color: #f4f4f8;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .foto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .foto-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* Títulos destacados */
+        .foto-card .titulo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #1a73e8; /* azul destacado */
+            margin-top: 10px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        /* Texto normal */
+        .foto-card .descricao p,
+        .foto-card .utilizacao ul li {
+            color: #000; /* preto padrão */
+            text-align: justify;
+            font-size: 0.95rem;
+        }
+
+        .foto-card .utilizacao ul {
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .foto-card .utilizacao ul li {
+            margin-bottom: 3px;
+        }
+
+        /* Link de download */
+        .download-link {
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 0.95rem;
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .download-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Detalhes do Modelo Escolar</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html#grupo">Grupo</a></li>
+                <li><a href="index.html#etapas">Etapas</a></li>
+                <li><a href="index.html#modelos">Modelos</a></li>
+                <li><a href="index.html#componentes">Componentes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SEÇÃO DE FOTOS COM DESCRIÇÃO E UTILIZAÇÃO -->
+    <section id="detalhes-modelo" class="detalhes-modelo">
+        <h2>Galeria do Modelo Escolar</h2>
+        <div class="galeria-fotos">
+
+            <!-- SENSOR INFRAVERMELHO -->
+            <div class="foto-card">
+                <img src="img/infravermelho.jpeg" alt="Sensor Infravermelho">
+                <h3>Sensor Infravermelho</h3>
+
+                <div class="titulo">Descrição</div>
+                <div class="descricao">
+                    <p>Permite ao robô detectar linhas e obstáculos próximos, facilitando navegação autônoma. Ensina conceitos de robótica, lógica de sensores e programação de decisões básicas em tempo real.</p>
+                </div>
+
+                <div class="titulo">Utilização</div>
+                <div class="utilizacao">
+                    <ul>
+                        <li>Seguir linhas em percursos desenhados.</li>
+                        <li>Detectar obstáculos no caminho do robô.</li>
+                        <li>Exercícios de lógica digital e leitura de sensores.</li>
+                        <li>Implementação de condicionais (if/else) no Arduino.</li>
+                        <li>Projetos de mini competições entre robôs.</li>
+                        <li>Introdução à programação orientada a eventos.</li>
+                    </ul>
+                    <a href="codigo\infravermelho.ino" download class="download-link">Download do Código</a>
+                </div>
+            </div>
+
+            <!-- CONTROLE REMOTO -->
+            <div class="foto-card">
+                <img src="img/controleremoto.jpeg" alt="Controle Remoto">
+                <h3>Controle Remoto</h3>
+
+                <div class="titulo">Descrição</div>
+                <div class="descricao">
+                    <p>Permite manipular o robô manualmente, ajudando os alunos a compreenderem como sinais digitais são convertidos em movimentos reais e interação homem-máquina.</p>
+                </div>
+
+                <div class="titulo">Utilização</div>
+                <div class="utilizacao">
+                    <ul>
+                        <li>Aprendizado de montagem de circuitos com motores.</li>
+                        <li>Estudo de sinais digitais e PWM.</li>
+                        <li>Programação de respostas a comandos do controle.</li>
+                        <li>Exercícios de precisão e coordenação de movimentos.</li>
+                        <li>Projetos interdisciplinares envolvendo física e matemática.</li>
+                        <li>Simulações de robótica em feiras escolares.</li>
+                    </ul>
+                    <a href="codigo\carrinhocontroleremoto.ino" download class="download-link">Download do Código</a>
+                </div>
+            </div>
+
+            <!-- SENSOR DE UMIDADE -->
+            <div class="foto-card">
+                <img src="img/umidade.jpeg" alt="Sensor de Umidade">
+                <h3>Sensor de Umidade</h3>
+
+                <div class="titulo">Descrição</div>
+                <div class="descricao">
+                    <p>Detecta a umidade do solo e permite que o robô tome decisões automáticas, como parar ou acionar alertas, ensinando conceitos de sensores analógicos e controle ambiental.</p>
+                </div>
+
+                <div class="titulo">Utilização</div>
+                <div class="utilizacao">
+                    <ul>
+                        <li>Monitoramento de umidade em plantas experimentais.</li>
+                        <li>Estudo de leituras analógicas com Arduino.</li>
+                        <li>Programação de respostas automáticas a variáveis ambientais.</li>
+                        <li>Projetos de irrigação automatizada em mini-hortas.</li>
+                        <li>Exercícios de interpretação de dados em tempo real.</li>
+                        <li>Integração de ciências naturais com robótica.</li>
+                    </ul>
+                    <a href="codigo\sensordeumidade.ino" download class="download-link">Download do Código</a>
+                </div>
+            </div>
+
+            <!-- SENSOR ULTRASSÔNICO -->
+            <div class="foto-card">
+                <img src="img/ultrassonico.jpeg" alt="Sensor Ultrassônico">
+                <h3>Sensor Ultrassônico</h3>
+
+                <div class="titulo">Descrição</div>
+                <div class="descricao">
+                    <p>Detecta obstáculos à distância usando ondas sonoras, ensinando física aplicada e lógica de desvio automático. Permite que os alunos programem movimentos reativos do robô.</p>
+                </div>
+
+                <div class="titulo">Utilização</div>
+                <div class="utilizacao">
+                    <ul>
+                        <li>Evitar obstáculos automaticamente.</li>
+                        <li>Aprender sobre ondas sonoras e distância.</li>
+                        <li>Implementação de algoritmos de decisão (if/else).</li>
+                        <li>Simulação de percursos complexos com desafios.</li>
+                        <li>Estudos de velocidade e tempo de propagação do som.</li>
+                        <li>Projetos práticos de robótica reativa.</li>
+                    </ul>
+                    <a href="codigo\sensorultrasonico.ino" download class="download-link">Download do Código</a>
+                </div>
+            </div>
+
+            <!-- SENSOR DE LUZ (LDR) -->
+            <div class="foto-card">
+                <img src="img/luminiosidade.jpeg" alt="Sensor de Luz">
+                <h3>Sensor de Luz (LDR)</h3>
+
+                <div class="titulo">Descrição</div>
+                <div class="descricao">
+                    <p>Detecta intensidade luminosa para que o robô siga a luz ou evite áreas claras/escuras, integrando conceitos de física, eletrônica e programação interativa.</p>
+                </div>
+
+                <div class="titulo">Utilização</div>
+                <div class="utilizacao">
+                    <ul>
+                        <li>Robôs fotoseguidores em circuitos iluminados.</li>
+                        <li>Aprendizado de sensores analógicos e leitura de tensão.</li>
+                        <li>Programação de ações condicionais baseadas na luz.</li>
+                        <li>Experimentos de fotometria e intensidade luminosa.</li>
+                        <li>Projetos interdisciplinares STEM/STEAM.</li>
+                        <li>Exploração de controle automático e reatividade ambiental.</li>
+                    </ul>
+                    <a href="codigo\luminosidade.ino" download class="download-link">Download do Código</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODELOS 3D -->
+<section id="modelos3d" class="modelos3d">
+    <h2 style="text-align: center;">Visualização 3D dos Robôs</h2>
+    <div class="cards-3d">
+        <div class="card-3d">
+            <h3>Robô com Sensor Ultrassônico</h3>
+            <iframe title="Robô Ultrassônico" width="300" height="300" 
+                src="URL_DO_MODELO_3D_1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="card-3d">
+            <h3>Robô com Sensor Infravermelho</h3>
+            <iframe title="Robô Infravermelho" width="300" height="300" 
+                src="URL_DO_MODELO_3D_2" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="card-3d">
+            <h3>Robô com Sensor de Umidade</h3>
+            <iframe title="Robô Umidade" width="300" height="300" 
+                src="URL_DO_MODELO_3D_3" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="card-3d">
+            <h3>Robô com Sensor de Luminosidade</h3>
+            <iframe title="Robô Luminosidade" width="300" height="300" 
+                src="URL_DO_MODELO_3D_4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="card-3d">
+            <h3>Robô Controle Remoto</h3>
+            <iframe title="Robô Controle Remoto" width="300" height="300" 
+                src="URL_DO_MODELO_3D_5" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+
+    <footer>
+        <p>&copy; 2025 Projeto final TUMO.</p>
+    </footer>
+
+</body>
+
+</html>
