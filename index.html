@@ -200,6 +200,88 @@ Este trabalho final reflete a aplicação de competências adquiridas ao longo d
     }
 </style>
 
+<section id="modelos" class="modelos">
+    <h2>Modelos Disponíveis</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Modelo Empresarial</h3>
+            <p>Feito para fins empresariais.</p>
+            <a href="pagina-detalhes2.html">
+                <button class="btn">Saiba Mais</button>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* --- MODELOS (padronizado com ETAPAS) --- */
+    #modelos {
+        text-align: center;
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #5f5e61, #676869); /* igual ETAPAS */
+        color: #fff;
+        border-radius: 15px;
+        max-width: 1100px;
+        margin: 40px auto;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    #modelos h2 {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+    }
+
+    .card {
+        background: rgba(0, 0, 0, 0.3); /* igual ao box das etapas */
+        border-radius: 15px;
+        padding: 25px;
+        width: 300px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+        transition: transform 0.3s, box-shadow 0.3s;
+        color: #fff;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .card p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        background: linear-gradient(135deg, #2e2e2e, #838385); /* estilo igual ao botão moderno */
+        border: none;
+        color: #fff;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #383738, #ecf2f3);
+    }
+</style>
+
 
     <!-- COMPONENTES -->
     <section id="componentes" class="componentes">

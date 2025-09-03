@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino MKR WiFi 1010 - IoT Carrier</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        header {
+            background-color: #7d8080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            max-width: 150px;
+            display: block;
+            margin: 10px auto;
+        }
+        nav {
+            background-color: #7d8080;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: rgb(44, 43, 43);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        h2 {
+            color: #131313;
+            margin-bottom: 20px;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background-color: white;
+            flex: 1 1 calc(33% - 20px);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            min-width: 250px;
+        }
+        .card img, .card video {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .card p {
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        footer {
+            background-color: #464747;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Arduino MKR WiFi 1010 - IoT Carrier</h1>
+</header>
+        <nav>
+            <ul>
+                <li><a href="index.html#grupo">Grupo</a></li>
+                <li><a href="index.html#etapas">Etapas</a></li>
+                <li><a href="index.html#modelos">Modelos</a></li>
+                <li><a href="index.html#componentes">Componentes</a></li>
+            </ul>
+        </nav>
+
+
+<section id="descricao">
+    <h2>Descrição e Utilidade</h2>
+    <p>
+        Este projeto utiliza a placa <strong>Arduino MKR WiFi 1010</strong> equipada com o módulo <strong>IoT Carrier</strong>. 
+        Ele permite a leitura de <strong>temperatura, pressão atmosférica e aceleração</strong> do ambiente. 
+        É ideal para monitoramento climático, prototipagem de IoT e experimentos educacionais.
+    </p>
+    <p>
+        <em>Comentário do desenvolvedor:</em> "O projeto foi criado para facilitar a compreensão de sensores integrados ao IoT Carrier, 
+        além de permitir visualização imediata dos dados em um display onboard e em uma futura integração online."
+    </p>
+</section>
+
+<section id="sensores">
+    <h2>Leitura de Sensores</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Temperatura</h3>
+            <img src="img\sensores (1).jpeg" alt="Sensor de Temperatura">
+            <p>Mostra a temperatura atual do ambiente em Celsius.</p>
+        </div>
+        <div class="card">
+            <h3>Pressão Atmosférica</h3>
+            <img src="img\sensores (3).jpeg" alt="Sensor de Pressão">
+            <p>Permite monitorar a pressão atmosférica em hPa, útil para previsões meteorológicas simples.</p>
+        </div>
+        <div class="card">
+            <h3>Aceleração</h3>
+            <img src="img\sensores (2).jpeg" alt="Sensor de Aceleração">
+            <p>Fornece valores em tempo real, permitindo o monitoramento.</p>
+        </div>
+        <div class="card">
+            <h3>Gráfico</h3>
+            <img src="img\grafico.jpg" alt="Gráfico de Sensores">
+            <p>Exibe os dados dos sensores em tempo real, permitindo uma análise visual das informações coletadas.</p>
+        </div>
+    </div>
+</section>
+
+<section id="media">
+    <h2>Demonstração</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Vídeo Demonstrativo</h3>
+            <video controls autoplay muted loop width="900" height="360">
+            <source src="video\sensortemperatura.mp4" type="video/mp4">               
+            Seu navegador não suporta vídeos.
+            </video>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Projeto Educacional Arduino MKR WiFi 1010 &copy; 2025</p>
+</footer>
+
+</body>
+</html>
