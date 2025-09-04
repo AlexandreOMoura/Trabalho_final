@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizador 3D Transparente</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #viewer {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="viewer"></div>
+
+    <!-- Three.js clássico -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+
+    <script>
+        const container = document.getElementById('viewer');
+
+        // Cena e câmera
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+
+        // Renderizador com fundo transparente
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        container.appendChild(renderer.domElement);
+
+        // Luz ambiente e direcional
+        scene.add(new THREE.AmbientLight(0x888888));
+        const light = new THREE.DirectionalLight(0xffffff, 1);
+        light.position.set(1, 1, 1).normalize();
+        scene.add(light);
+
+        // Controles orbitais
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        // Loader STL
+        const loader = new THREE.STLLoader();
+        loader.load("luminosidade.stl", geometry => {
+            const material = new THREE.MeshStandardMaterial({ color: 0xfc8403 });
+            const mesh = new THREE.Mesh(geometry, material);
+
+            mesh.rotation.x = -Math.PI / 2;
+
+            // Centraliza a geometria
+            geometry.computeBoundingBox();
+            geometry.center();
+
+            // Ajusta posição da câmera
+            const size = new THREE.Vector3();
+            geometry.boundingBox.getSize(size);
+            const maxDim = Math.max(size.x, size.y, size.z);
+            const fov = camera.fov * (Math.PI / 180);
+            let cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2));
+            camera.position.z = cameraZ * 2;
+
+            controls.update();
+            scene.add(mesh);
+        });
+
+
+
+        // Variável de velocidade de rotação (rad/frame)
+        const autoRotateSpeed = 0.003; // 0.002 radianos por frame (~0.1°)
+
+        // Loop de animação
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Rotação automática do objeto ou da cena
+            if (scene.children.length > 0) {
+
+                const mesh = scene.children.find(obj => obj.type === "Mesh");
+                if (mesh) {
+                    mesh.rotation.z += autoRotateSpeed; // girar
+                }
+            }
+
+            controls.update(); // mantém o OrbitControls funcional
+            renderer.render(scene, camera);
+        }
+        animate();
+
+
+        // Responsivo ao redimensionar
+        window.addEventListener("resize", () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+    </script>
+</body>
+
+</html>
