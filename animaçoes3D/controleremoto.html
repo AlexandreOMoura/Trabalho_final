@@ -51,7 +51,7 @@
 
         // Loader STL
         const loader = new THREE.STLLoader();
-        loader.load("infravermelho.stl", geometry => {
+        loader.load("controleremoto.stl", geometry => {
             const material = new THREE.MeshStandardMaterial({ color: 0xfc8403 });
             const mesh = new THREE.Mesh(geometry, material);
 
